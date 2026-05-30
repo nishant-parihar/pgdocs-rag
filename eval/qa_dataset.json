@@ -1,0 +1,102 @@
+[
+    {
+        "question": "What is the basic syntax of a SELECT statement in PostgreSQL?",
+        "reference_answer": "The basic syntax is SELECT column1, column2 FROM table_name WHERE condition. You can use * to select all columns.",
+        "expected_source": "Sql Select"
+    },
+    {
+        "question": "How do you insert multiple rows in a single INSERT statement?",
+        "reference_answer": "You can insert multiple rows by specifying multiple value lists: INSERT INTO table (col1, col2) VALUES (val1, val2), (val3, val4).",
+        "expected_source": "Sql Insert"
+    },
+    {
+        "question": "How do you update rows in a PostgreSQL table?",
+        "reference_answer": "Use the UPDATE statement: UPDATE table SET column = value WHERE condition. Without WHERE, all rows are updated.",
+        "expected_source": "Sql Update"
+    },
+    {
+        "question": "How do you delete specific rows from a table?",
+        "reference_answer": "Use DELETE FROM table WHERE condition. Omitting WHERE deletes all rows but the table structure remains.",
+        "expected_source": "Sql Delete"
+    },
+    {
+        "question": "How do you create a new table in PostgreSQL?",
+        "reference_answer": "Use CREATE TABLE table_name (column1 datatype constraints, column2 datatype constraints). You can specify primary keys, not null, and default constraints.",
+        "expected_source": "Sql Createtable"
+    },
+    {
+        "question": "How do you add a new column to an existing table?",
+        "reference_answer": "Use ALTER TABLE table_name ADD COLUMN column_name datatype. You can also set constraints and defaults.",
+        "expected_source": "Sql Altertable"
+    },
+    {
+        "question": "How do you drop a table in PostgreSQL?",
+        "reference_answer": "Use DROP TABLE table_name. Add IF EXISTS to avoid errors if the table does not exist. CASCADE drops dependent objects.",
+        "expected_source": "Sql Droptable"
+    },
+    {
+        "question": "How do you create an index on a table column?",
+        "reference_answer": "Use CREATE INDEX index_name ON table_name (column_name). You can also create unique indexes with CREATE UNIQUE INDEX.",
+        "expected_source": "Sql Createindex"
+    },
+    {
+        "question": "What is a partial index in PostgreSQL?",
+        "reference_answer": "A partial index is built over a subset of rows defined by a WHERE clause. It is smaller and faster than a full index when queries target that subset.",
+        "expected_source": "Indexes Partial"
+    },
+    {
+        "question": "What types of indexes does PostgreSQL support?",
+        "reference_answer": "PostgreSQL supports B-tree, Hash, GiST, SP-GiST, GIN, and BRIN indexes. B-tree is the default and most commonly used.",
+        "expected_source": "Indexes"
+    },
+    {
+        "question": "How do you start a transaction in PostgreSQL?",
+        "reference_answer": "Use the BEGIN command to start a transaction block. All statements after BEGIN are part of the transaction until COMMIT or ROLLBACK.",
+        "expected_source": "Sql Begin"
+    },
+    {
+        "question": "How do you commit a transaction?",
+        "reference_answer": "Use COMMIT to permanently save all changes made during the current transaction block.",
+        "expected_source": "Sql Commit"
+    },
+    {
+        "question": "How do you roll back a transaction?",
+        "reference_answer": "Use ROLLBACK to undo all changes made during the current transaction block since the last BEGIN.",
+        "expected_source": "Sql Rollback"
+    },
+    {
+        "question": "What is a savepoint and how do you use it?",
+        "reference_answer": "A savepoint marks a point within a transaction. Use SAVEPOINT name to create one and ROLLBACK TO name to undo changes back to that point without aborting the whole transaction.",
+        "expected_source": "Sql Savepoint"
+    },
+    {
+        "question": "How do you run VACUUM in PostgreSQL and why is it needed?",
+        "reference_answer": "Use VACUUM table_name to reclaim storage from dead tuples. It is needed because PostgreSQL's MVCC leaves dead row versions that must be cleaned up periodically.",
+        "expected_source": "Sql Vacuum"
+    },
+    {
+        "question": "How do you analyze query performance using EXPLAIN?",
+        "reference_answer": "Use EXPLAIN query to see the query plan. Use EXPLAIN ANALYZE to also execute the query and show actual run times.",
+        "expected_source": "Sql Explain"
+    },
+    {
+        "question": "What are the different types of constraints in PostgreSQL?",
+        "reference_answer": "PostgreSQL supports NOT NULL, UNIQUE, PRIMARY KEY, FOREIGN KEY, CHECK, and EXCLUSION constraints.",
+        "expected_source": "Ddl Constraints"
+    },
+    {
+        "question": "How does PostgreSQL handle concurrency using multiple versions of rows?",
+        "reference_answer": "MVCC stands for Multi-Version Concurrency Control. It allows readers and writers to not block each other by keeping multiple versions of rows.",
+        "expected_source": "Mvcc"
+    },
+    {
+        "question": "How do you create a view in PostgreSQL?",
+        "reference_answer": "Use CREATE VIEW view_name AS SELECT ... to define a virtual table based on a query. Views simplify complex queries and control data access.",
+        "expected_source": "Sql Createview"
+    },
+    {
+        "question": "How do you grant privileges to a user in PostgreSQL?",
+        "reference_answer": "Use GRANT privilege ON object TO role. For example, GRANT SELECT ON table TO username gives read access.",
+        "expected_source": "Sql Grant"
+    }
+]
